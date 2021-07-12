@@ -12,7 +12,7 @@ FROM node:14.17.2-buster
 
 ENV COMMIT_MESSAGE="Sample Commit"
 RUN echo ${COMMIT_MESSAGE}
-RUN echo (expr substr $COMMIT_MESSAGE 0 10)
+RUN echo (expr substr "$COMMIT_MESSAGE" "0" "10")
 RUN echo \"${COMMIT_MESSAGE:0:10}\"
 
 # RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
