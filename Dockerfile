@@ -10,8 +10,11 @@ FROM node:14.17.2-buster
 # LABEL com.github.actions.icon="package"
 # LABEL com.github.actions.color="gray-dark"
 
-RUN which sh
-RUN which bash
+ENV COMMIT_MESSAGE=Sample Commit
+RUN echo $COMMIT_MESSAGE
+RUN echo "COMMIT_MESSAGE"
+RUN echo "$COMMIT_MESSAGE"
+RUN echo \"${COMMIT_MESSAGE:0:200}\"
 
 # RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
 # RUN apt update && apt install -y software-properties-common
