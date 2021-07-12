@@ -10,8 +10,8 @@ FROM node:14.17.2-alpine
 # LABEL com.github.actions.icon="package"
 # LABEL com.github.actions.color="gray-dark"
 
-RUN readlink -f $(which sh)
-RUN readlink -f $(which bash)
+RUN which sh
+RUN which bash
 
 # RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
 # RUN apt update && apt install -y software-properties-common
